@@ -1,18 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
+import ReactDOM from "react-dom";
+import { Switch, Route } from "react-router-dom";
 import './App.css';
 import Button from 'react-bootstrap/Button';
 
+import Homepage from './components/Homepage/Homepage';
+
+
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <Button color="primary">Primary Test</Button>{' '}
-      </header>
+    <div>
+      <Switch>
+        <Route exact path="/" component={Homepage}/>
+        {/* Anything more specific needs to be prioritized higher */}
+        {/* <Route path='/' component={Homepage} /> */}
+      </Switch>
     </div>
   );
 }
