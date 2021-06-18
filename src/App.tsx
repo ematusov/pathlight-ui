@@ -1,20 +1,19 @@
 import React from 'react';
 import ReactDOM from "react-dom";
-import { Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch } from "react-router-dom";
 import './App.css';
-import Button from 'react-bootstrap/Button';
+import "fontsource-roboto";
 
-import Homepage from './pages/Homepage/Homepage';
-
+import RouterConfig from 'navigation/RouterConfig';
 
 function App() {
   return (
     <div>
-      <Switch>
-        <Route exact path="/" component={Homepage}/>
-        {/* Anything more specific needs to be prioritized higher */}
-        {/* <Route path='/' component={Homepage} /> */}
-      </Switch>
+      <BrowserRouter>
+        <Switch>
+          <RouterConfig/>
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }
