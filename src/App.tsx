@@ -4,7 +4,7 @@ import { Switch, Route } from "react-router-dom";
 import './App.css';
 import Button from 'react-bootstrap/Button';
 
-import Homepage from './components/Homepage/Homepage';
+import Homepage from './pages/Homepage/Homepage';
 
 
 function App() {
