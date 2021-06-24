@@ -1,13 +1,10 @@
 import React from 'react';
-import logoFull from 'assets/logoFull.png'
+import WelcomeCounter from './components/WelcomeCounter';
 
 class Homepage extends React.Component {
     render() {
       return (
-      <>
-      <img src={logoFull} alt="Logo" />
-      <h1>Hello, Homepage!</h1>
-      </>
+        <WelcomeCounter/>
       )
     }
   }
