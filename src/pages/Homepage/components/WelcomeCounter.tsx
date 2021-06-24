@@ -5,6 +5,8 @@ import { incrementByAmount } from './WelcomeCounterSlice'
 import InputGroup from 'react-bootstrap/InputGroup'
 import FormControl from 'react-bootstrap/FormControl'
 import Button from 'react-bootstrap/Button';
+import './WelcomeCounter.scss';
+import {Card, Row, Col} from 'react-bootstrap';
 
 const WelcomeCounter = () => {
 
@@ -13,21 +15,44 @@ const WelcomeCounter = () => {
     const [incrementAmount, setIncrementAmount] = useState('0');
 
     return (
-      <>
-      <img src={logoFull} alt="Logo" />
-      <h1>Hello, Homepage!</h1>
+    <>
+        <div className="pathlight-logo">
+            <img src={logoFull}/>
+        </div>
+        <div className="card-body">
+            <Row className="justify-content-md-center">
+            <Card
 
-    <InputGroup className="mb-3">
-        <InputGroup.Prepend>
-            <InputGroup.Text id="basic-addon1">#</InputGroup.Text>
-        </InputGroup.Prepend>
-        <FormControl
-            placeholder="Set Increment Amount"
-            aria-label="Set Increment Amount"
-            onChange={e => setIncrementAmount(e.target.value)}
-        />
-    </InputGroup>
-    <Button variant="primary" onClick={() => dispatch(incrementByAmount(Number(incrementAmount) || 0))}>Submit</Button>
+                bg="info"
+                style={{ width: '18rem' }}
+                className="mb-2 text-center"
+                >
+                <Card.Header>Pathlight Score Counter</Card.Header>
+                <Card.Body>
+                <Card.Text>
+                    {count}
+                </Card.Text>
+                </Card.Body>
+            </Card>   
+            </Row>
+        </div>
+
+        <div className="increment-input">
+            <Row>
+                <Col>
+                <InputGroup className="mb-2">
+            <FormControl
+                placeholder="Set Increment Amount"
+                aria-label="Set Increment Amount"
+                onChange={e => setIncrementAmount(e.target.value)}
+            />
+        </InputGroup>
+        </Col>
+        <Col>
+        <Button variant="primary" onClick={() => dispatch(incrementByAmount(Number(incrementAmount) || 0))}>Submit</Button>
+        </Col>
+        </Row>
+        </div>
     </>
       )
   }
